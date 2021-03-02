@@ -1,0 +1,26 @@
+databaseChangeLog:
+- changeSet:
+    id: 202103021100
+    comment: デモテーブルを作成する
+    author: root
+    changes:
+    - createTable:
+        tableName: demo_entity
+        remark: デモテーブル
+        columns:
+        - column:
+            name: demo_id
+            type: bigint
+            remarks: ID
+            constraints:
+                nullable: false
+        - column:
+            name: demo_string
+            type: varchar(20)
+            remarks: 文字列
+            constraints:
+                nullable: false
+    - addPrimaryKey:
+        columnNames: demo_id
+        constrainName: pk_demo_id
+        tableName: demo_entity

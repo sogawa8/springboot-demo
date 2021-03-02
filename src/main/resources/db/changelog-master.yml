@@ -1,3 +1,6 @@
 databaseChangeLog:
 - include:
     file: src/main/resources/db/changelogs/create_demo_entity.yml
+- include:
+    file: src/main/resources/db/changelogs/init_demo_entity.yml
+    

@@ -1,0 +1,9 @@
+databaseChangeLog:
+- changeSet:
+    id: 202103021130
+    comment: デモテーブルに初期データを投入する
+    author: root
+    changes:
+    - loadData:
+        tableName: demo_entity
+        file: src/main/resources/db/seeds/init_demo_entity.csv

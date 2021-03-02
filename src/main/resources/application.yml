@@ -1,4 +1,7 @@
 spring:
+  jpa:
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect
   datasource:
     url: jdbc:mysql://localhost:23306/demo_database
     username: root

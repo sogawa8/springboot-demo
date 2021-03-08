@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import jp.co.demo.application.DemoScenario;
 import jp.co.demo.domain.DemoEntity;
 
+@RequestMapping("rest")
 @RestController
 public class DemoRestController {
 

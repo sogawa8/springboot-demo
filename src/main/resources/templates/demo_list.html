@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Demo List</title>
+</head>
+<table>
+  <tr>
+    <th>#</th>
+    <th>id</th>
+    <th>value</th>
+  </tr>
+  <tr th:each="demo:${demoForms}">
+    <td th:text="${demoStat.count}"></td>
+    <td th:text="${demo.id}"></td>
+    <td th:text="${demo.value}"></td>
+  </tr>
+</table>
+</html>

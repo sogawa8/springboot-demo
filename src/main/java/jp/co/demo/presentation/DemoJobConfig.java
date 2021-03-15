@@ -18,18 +18,27 @@ public class DemoJobConfig {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final DemoTasklet demoTasklet;
+    private final DemoDatabaseAccessTasklet demoDatabaseAccessTasklet;
 
     @Bean
-    public Job demoJob(Step demoStep) {
+    public Job demoJob(Step demoStep1, Step demoStep2) {
         return jobBuilderFactory.get("demoJob")
-                                .start(demoStep)
+                                .start(demoStep1)
+                                .next(demoStep2)
                                 .build();
     }
 
     @Bean
-    public Step demoStep() {
-        return stepBuilderFactory.get("demoStep")
+    public Step demoStep1() {
+        return stepBuilderFactory.get("demoStep1")
                                  .tasklet(demoTasklet)
+                                 .build();
+    }
+
+    @Bean
+    public Step demoStep2() {
+        return stepBuilderFactory.get("demoStep2")
+                                 .tasklet(demoDatabaseAccessTasklet)
                                  .build();
     }
 

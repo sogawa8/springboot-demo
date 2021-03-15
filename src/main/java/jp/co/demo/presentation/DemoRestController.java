@@ -2,20 +2,20 @@ package jp.co.demo.presentation;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jp.co.demo.application.DemoScenario;
 import jp.co.demo.domain.DemoEntity;
+import lombok.RequiredArgsConstructor;
 
 @RequestMapping("rest")
 @RestController
+@RequiredArgsConstructor
 public class DemoRestController {
 
-    @Autowired
-    private DemoScenario demoScenario;
+    private final DemoScenario demoScenario;
 
     @RequestMapping("/get/hoge")
     public String getHoge() {

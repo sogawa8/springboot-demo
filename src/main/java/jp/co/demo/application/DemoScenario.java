@@ -30,4 +30,19 @@ public class DemoScenario {
         demoEntityRepository.save(demoEntity);
     }
 
+    boolean demoTest1() {
+        return true;
+    }
+
+    List<String> demoTest2() {
+        return List.of("a", "b", "c");
+    }
+
+    List<DemoEntity> demoTest3() {
+        return List.of(new DemoEntity(1L, "demo1"), new DemoEntity(2L, "demo2"));
+    }
+
+    DemoEntity demoTest4() {
+        return new DemoEntity(1L, "demo1");
+    }
 }
